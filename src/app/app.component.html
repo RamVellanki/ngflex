@@ -1,3 +1,29 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf = "!fwSideFulllMode" class="container" fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap.xs=0>
+  <md-toolbar class="toolbar" color="primary">
+    <md-icon fxHide.lg fxHide.xl fxShow.xs>menu</md-icon>
+    <span class="fill-space"></span>
+    <span class="title">NG App</span>
+    <span class="fill-space"></span>
+    <md-icon (click)="toggleMode()">compare_arrows</md-icon>
+  </md-toolbar>
+  <div class="container" fxLayout="row" fxLayoutAlign="center">
+    <div class="sidenav" fxFlexFill fxFlex="13%">Sidenav</div>
+    <div class="content" fxFlex="87%">Content</div>
+  </div>
+</div>
+
+
+<div *ngIf = "fwSideFulllMode" class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap.xs=0>
+  <div class="sidenav" fxFlexFill fxFlex="13%">Sidenav</div>
+
+  <div class="container" fxLayout="column" fxLayoutAlign="center" fxFlex="87%">
+    <md-toolbar class="toolbar" color="primary" fxFlex="5%">
+      <md-icon fxHide.lg fxHide.xl fxShow.xs>menu</md-icon>
+      <span class="fill-space"></span>
+      <span class="title">NG App</span>
+      <span class="fill-space"></span>
+      <md-icon (click)="toggleMode()">compare_arrows</md-icon>
+    </md-toolbar>
+    <div class="content" fxFlex="95%">Content</div>
+  </div>
+</div>
